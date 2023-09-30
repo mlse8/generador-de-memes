@@ -1,0 +1,34 @@
+header{
+    padding: .5rem 0;
+    background-color: var(--header-color);
+}
+.title{
+    margin: .75rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+.buttons-container button{
+    padding: .75rem .5rem;
+    color: var(--text-color);
+    font-size: .85rem;
+    background-color: transparent;
+    border-radius: .25rem;
+    border: none;
+    transition: background-color .25s;
+}
+.buttons-container button:hover{
+    background-color: var(--button-filter-hover);
+    cursor: pointer;
+}
+
+@media (width >= 768px){
+    .title{
+        font-size: 2.2rem;
+    }
+}

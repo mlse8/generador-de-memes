@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+.dark-theme{
+    --bg-color: #30343F;
+    --header-color: #191E2B;
+    --filter-color: #252935;
+    --text-color: #FFFFFF;
+    --button-filter: #393E49;
+    --button-filter-hover: #4e5565;
+}
+.light-theme{
+    --bg-color: #EEEEEE;
+    --header-color: #E0E0E0;
+    --filter-color: #FAFAFA;
+    --text-color: #424242;
+    --button-filter: #E1E1E1;
+    --button-filter-hover: #BDBDBD;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
