@@ -9,7 +9,6 @@
 }
 .meme{
     width: clamp(260px, 100%, 400px);
-    max-height: 600px;
     background-color: #000;
     display: flex;
     flex-direction: column;
@@ -24,18 +23,20 @@
     background-color: #FFFFFF;
 }
 .meme-img{
-    min-height: max(280px, 22vmax);
+    min-height: max(280px, 17vmax);
     flex: 1;
 }
-.meme-button{
+.btn{
     padding: 1rem;
     color: #FFFFFF;
-    background-color: #2e7d32;
     border: none;
     border-radius: .5rem;
     cursor: pointer;
     transition: background-color .25s;
 }
-.meme-button:hover{
+.meme-btn{
+    background-color: #2e7d32;
+}
+.meme-btn:hover{
     background-color: #1B5E20;
 }
