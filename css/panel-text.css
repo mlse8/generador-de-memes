@@ -1,0 +1,36 @@
+.text-controls{
+    resize: vertical;
+    margin-bottom: .5rem;
+}
+.controls-check{
+    margin-bottom: 1.25rem;
+    font-size: .75rem;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+.font-select{
+    margin-bottom: .3rem;
+}
+.controls-text-font{
+    /* width: 100%; */
+    /* height: 2rem; */
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+.controls-text-font .controls-input{
+    margin-bottom: 0;
+}
+.btn-text{
+    margin: 0;
+    padding: .55rem .8rem;
+}
+.controls-text-color{
+    display: flex;
+    gap: .75rem;
+}
+.controls-text-color .panel-image-controls{
+    width: 50%;
+}

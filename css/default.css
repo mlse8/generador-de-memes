@@ -9,3 +9,6 @@
 
 /* Estilos panel imagen */
 @import url('panel-image.css');
+
+/* Estilos panel texto */
+@import url('panel-text.css');

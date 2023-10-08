@@ -21,7 +21,8 @@
                 Texto
             </button>
             <button class="button-theme">
-                <i class="fa-solid fa-lightbulb"></i>
+                <i class="fa-regular fa-lightbulb"></i>
+                <!-- <i class="fa-solid fa-lightbulb"></i> -->
                 Modo oscuro
             </button>
         </div>
@@ -85,6 +86,86 @@
                 </div>
             </div>
             <button class="btn controls-btn">Reestablecer filtros</button>
+        </section>
+        <section class="panel-text none">
+            <h2 class="panel-image-title">TEXTO</h2>
+            <div class="panel-image-controls">
+                <h3 class="controls-title">SUPERIOR</h3>
+                <textarea id="text-top-text" class="controls-input text-controls">TOP TEXT</textarea>
+                <div class="controls-check">
+                    <input type="checkbox" name="top-text" id="top-text">
+                    <label for="top-text">Sin texto superior</label>
+                </div>
+            </div>
+            <div class="panel-image-controls">
+                <h3 class="controls-title">INFERIOR</h3>
+                <textarea id="text-bottom-text" class="controls-input text-controls">BOTTOM TEXT</textarea>
+                <div class="controls-check">
+                    <input type="checkbox" name="bottom-text" id="bottom-text">
+                    <label for="bottom-text">Sin texto inferior</label>
+                </div>
+            </div>
+            <div class="panel-image-controls">
+                <h3 class="controls-title">FUENTE</h3>
+                <select name="Fuentes" id="text-font-family" class="controls-input font-select">
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Impact" selected>Impact</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+                <div class="controls-text-font">
+                    <input type="number" name="text-font-size" id="text-font-size" min="12"
+                    value="40" class="controls-input">
+                    <button class="btn controls-btn btn-text"><i class="fa-solid fa-align-left"></i></button>
+                    <button class="btn controls-btn btn-text"><i class="fa-solid fa-align-center"></i></button>
+                    <button class="btn controls-btn btn-text"><i class="fa-solid fa-align-right"></i></button>
+                </div>
+            </div>
+            <div class="panel-image-controls">
+                <div class="controls-text-color">
+                    <div class="panel-image-controls">
+                        <h3 class="controls-title">COLOR</h3>
+                        <input type="color" name="text-color" id="text-color" class="controls-input">
+                    </div>
+                    <div class="panel-image-controls">
+                        <h3 class="controls-title">FONDO</h3>
+                        <input type="color" name="background-color" id="background-color" class="controls-input">
+                    </div>
+                </div>
+                <div class="controls-check">
+                    <input type="checkbox" name="background-transparent" id="background-transparent">
+                <label for="background-transparent">Fondo transparente</label>
+                </div>
+            </div>
+            <div class="panel-image-controls">
+                <h3 class="controls-title">CONTORNO</h3>
+                <div class="controls-text-font">
+                    <button class="btn controls-btn btn-text">Ninguno</button>
+                    <button class="btn controls-btn btn-text">Claro</button>
+                    <button class="btn controls-btn btn-text">Oscuro</button>
+                </div>
+            </div>
+            <div class="panel-image-controls">
+                <h3 class="controls-title">ESPACIADO</h3>
+                <input type="number" name="padding" id="padding" min="10" max="50"
+                value="35" class="controls-input">
+            </div>
+            <div class="panel-image-controls">
+                <h3 class="controls-title">INTERLINEADO</h3>
+                <select id="line-height" class="controls-input">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected>1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </div>
         </section>
     </aside>
 </body>
