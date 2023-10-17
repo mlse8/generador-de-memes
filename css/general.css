@@ -6,7 +6,7 @@
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
 }
-.dark-theme{
+:root{
     --bg-color: #30343F;
     --header-color: #191E2B;
     --filter-color: #252935;
@@ -27,5 +27,5 @@ body{
     color: var(--text-color);
 }
 .none{
-    display: none;
+    display: none !important;
 }

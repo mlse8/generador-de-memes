@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/ef3f394e31.js" crossorigin="anonymous"></script>
     <title>Editor de memes</title>
 </head>
-<body class="dark-theme">
+<body>
     <header>
         <h1 class="title">Generador de Memes</h1>
         <div class="buttons-container">
@@ -21,9 +21,14 @@
                 Texto
             </button>
             <button class="button-theme">
-                <i class="fa-regular fa-lightbulb"></i>
-                <!-- <i class="fa-solid fa-lightbulb"></i> -->
-                Modo oscuro
+                <span class="light-off">
+                    <i class="fa-regular fa-lightbulb"></i>
+                    Modo oscuro
+                </span>
+                <span class="light-on none">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Modo claro
+                </span>
             </button>
         </div>
     </header>
@@ -168,5 +173,7 @@
             </div>
         </section>
     </aside>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
