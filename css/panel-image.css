@@ -71,11 +71,13 @@
 @media (width >= 768px){
     .panel-container{
         width: 260px;
-        display: block;
     }
 }
 
 @media (width >= 1024px){
+    .panel-container{
+        display: block;
+    }
     .panel-button{
         display: none;
     }

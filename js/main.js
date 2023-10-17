@@ -13,24 +13,33 @@ const lightTheme = () => {
 }
 const showPanelImage = () =>{
     showPanel()
+    hideElement(".panel-text")
     showElement(".panel-image")
 }
-const hidePanelImage = () =>{
-    hidePanel()
+const showPanelText = () =>{
+    showPanel()
     hideElement(".panel-image")
+    showElement(".panel-text")
 }
 
 const initializeProject = () => {
+    // Modo oscuro / modo claro 
     $('.button-theme').addEventListener('click', () => {
         lightTheme()
     })
 
+    // Abrir y cerrar panel de imagen 
     $(".button-image").addEventListener('click', () => {
         showPanelImage()
     })
 
     $(".panel-button").addEventListener('click', () => {
-        hidePanelImage()
+        hidePanel()
+    })
+
+    // Abrir y cerrar panel de texto
+    $(".button-text").addEventListener('click', () => {
+        showPanelText()
     })
 }
 
