@@ -5,17 +5,23 @@ const showPanel = () => $(".panel-container").style.display = "block"
 const hidePanel = () => $(".panel-container").style.display = "none"
 const hideElement = (selector) => $(selector).classList.add("none")
 const showElement = (selector) => $(selector).classList.remove("none")
+
+// Imagen
 const backgroundImage = (e) => $(".meme-img").style.backgroundImage = `url("${e.target.value}")`
 const backgroundColor = (e) => $(".meme-img").style.backgroundColor = e.target.value
 const backgroundBlendMode = (e) => $(".meme-img").style.backgroundBlendMode = e.target.value
 const filtersMeme = () => $(".meme-img").style.filter = `blur(${$("#blur").value}px) brightness(${$("#brightness").value}) contrast(${$("#contrast").value}%) grayscale(${$("#grayscale").value}%) hue-rotate(${$("#hue-rotate").value}deg) invert(${$("#invert").value}) opacity(${$("#opacity").value}) saturate(${$("#saturate").value}%) sepia(${$("#sepia").value}%)`
+const reset = (selector, initialValue=0) => {
+    $(selector).value = initialValue
+}
 
-
+// Modo oscuro - modo claro 
 const lightTheme = () => {
     toggleClass("body", "light-theme")
     toggleClass(".light-off", "none")
     toggleClass(".light-on", "none")
 }
+// Paneles
 const showPanelImage = () =>{
     showPanel()
     hideElement(".panel-text")
@@ -25,6 +31,19 @@ const showPanelText = () =>{
     showPanel()
     hideElement(".panel-image")
     showElement(".panel-text")
+}
+// Resetear filtros
+const resetFiltersMeme = () =>{
+    reset("#brightness", 1)
+    reset("#opacity", 1)
+    reset("#contrast", 100)
+    reset("#blur")
+    reset("#grayscale")
+    reset("#sepia")
+    reset("#hue-rotate")
+    reset("#saturate", 100)
+    reset("#invert")
+    filtersMeme()
 }
 
 const initializeProject = () => {
@@ -57,6 +76,8 @@ const initializeProject = () => {
     $("#hue-rotate").addEventListener("input", filtersMeme)
     $("#saturate").addEventListener("input", filtersMeme)
     $("#invert").addEventListener("input", filtersMeme)
+
+    $("#reset-filters").addEventListener("click", resetFiltersMeme)
 }
 
 window.addEventListener("load", initializeProject)
