@@ -5,7 +5,8 @@ const showPanel = () => $(".panel-container").style.display = "block"
 const hidePanel = () => $(".panel-container").style.display = "none"
 const hideElement = (selector) => $(selector).classList.add("none")
 const showElement = (selector) => $(selector).classList.remove("none")
-const imageBackground = (e) => $(".meme-img").style.backgroundImage = `url("${e.target.value}")`
+const backgroundImage = (e) => $(".meme-img").style.backgroundImage = `url("${e.target.value}")`
+const backgroundColor = (e) => $(".meme-img").style.backgroundColor = e.target.value
 
 const lightTheme = () => {
     toggleClass("body", "light-theme")
@@ -37,7 +38,9 @@ const initializeProject = () => {
     $(".panel-button").addEventListener('click', hidePanel)
 
     //Imagen
-    $("#url-input").addEventListener("input", imageBackground)
+    $("#url-input").addEventListener("input", backgroundImage)
+
+    $("#colors-input").addEventListener("input", backgroundColor)
 }
 
 window.addEventListener("load", initializeProject)
