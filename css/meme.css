@@ -8,7 +8,8 @@
     gap: 2rem;
 }
 .meme{
-    width: clamp(260px, 100%, 400px);
+    width: clamp(300px, 60vmin, 480px);
+    height: clamp(300px, 60vmin, 480px);
     background-color: #000;
     display: flex;
     flex-direction: column;
@@ -23,8 +24,10 @@
     background-color: #FFFFFF;
 }
 .meme-img{
-    min-height: max(280px, 17vmax);
     flex: 1;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .btn{
     padding: 1rem;
