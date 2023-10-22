@@ -14,6 +14,9 @@ const filtersMeme = () => $(".meme-img").style.filter = `blur(${$("#blur").value
 const reset = (selector, initialValue=0) => {
     $(selector).value = initialValue
 }
+const writeText = (paragraph ,text) => {
+    $(paragraph).innerText = $(text).value
+}
 
 // Modo oscuro - modo claro 
 const lightTheme = () => {
@@ -78,6 +81,25 @@ const initializeProject = () => {
     $("#invert").addEventListener("input", filtersMeme)
 
     $("#reset-filters").addEventListener("click", resetFiltersMeme)
+
+    // Texto
+    $("#text-top-text").addEventListener("input", () => {
+        writeText(".top-text", "#text-top-text")
+    })
+    $("#text-bottom-text").addEventListener("input", () => {
+        writeText(".bottom-text", "#text-bottom-text")
+    })
+
+    $("#check-top-text").addEventListener("change", () => {     
+        toggleClass(".top-text", "none")
+    })
+    $("#check-bottom-text").addEventListener("change", () => {
+        toggleClass(".bottom-text", "none")
+    })
+    /* Otra manera de hacerlo
+    $("#check-top-text").addEventListener("input", (e) => {
+        (e.target.checked) ? hideElement(".top-text") : showElement(".top-text")
+    })*/
 }
 
 window.addEventListener("load", initializeProject)
