@@ -15,7 +15,7 @@
     flex-direction: column;
 }
 .meme-text{
-    padding: .5rem 0;
+    padding: .5rem 1rem;
     font-family: Impact;
     font-weight: bold;
     font-size: 1.25rem;

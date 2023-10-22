@@ -12,8 +12,12 @@ const backgroundColor = (e) => $(".meme-img").style.backgroundColor = e.target.v
 const backgroundBlendMode = (e) => $(".meme-img").style.backgroundBlendMode = e.target.value
 const filtersMeme = () => $(".meme-img").style.filter = `blur(${$("#blur").value}px) brightness(${$("#brightness").value}) contrast(${$("#contrast").value}%) grayscale(${$("#grayscale").value}%) hue-rotate(${$("#hue-rotate").value}deg) invert(${$("#invert").value}) opacity(${$("#opacity").value}) saturate(${$("#saturate").value}%) sepia(${$("#sepia").value}%)`
 const reset = (selector, initialValue=0) => $(selector).value = initialValue
-
+// Texto
 const writeText = (paragraph ,text) => $(paragraph).innerText = $(text).value
+const alignText = (align) => {
+    $(".top-text").style.textAlign = align
+    $(".bottom-text").style.textAlign = align
+}
 
 // Modo oscuro - modo claro 
 const lightTheme = () => {
@@ -112,6 +116,18 @@ const initializeProject = () => {
     })
     $("#text-font-size").addEventListener("input", () => {
         fonts("fontSize", "#text-font-size")
+    })
+    $("#text-font-size").addEventListener("input", () => {
+        fonts("fontSize", "#text-font-size")
+    })
+    $("#align-left").addEventListener("click", () => {
+        alignText("left")
+    })
+    $("#align-center").addEventListener("click", () => {
+        alignText("center")
+    })
+    $("#align-right").addEventListener("click", () => {
+        alignText("right")
     })
 }
 
