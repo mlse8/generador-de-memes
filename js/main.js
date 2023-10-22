@@ -17,6 +17,7 @@ const reset = (selector, initialValue=0) => {
 const writeText = (paragraph ,text) => {
     $(paragraph).innerText = $(text).value
 }
+const fontFamily = (selector) => $(selector).style.fontFamily = $("#text-font-family").value
 
 // Modo oscuro - modo claro 
 const lightTheme = () => {
@@ -47,6 +48,10 @@ const resetFiltersMeme = () =>{
     reset("#saturate", 100)
     reset("#invert")
     filtersMeme()
+}
+const changeFont = () => {
+    fontFamily(".top-text")
+    fontFamily(".bottom-text")
 }
 
 const initializeProject = () => {
@@ -100,6 +105,8 @@ const initializeProject = () => {
     $("#check-top-text").addEventListener("input", (e) => {
         (e.target.checked) ? hideElement(".top-text") : showElement(".top-text")
     })*/
+
+    $("#text-font-family").addEventListener("change", changeFont)
 }
 
 window.addEventListener("load", initializeProject)
