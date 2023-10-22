@@ -164,6 +164,9 @@ const initializeProject = () => {
     $("#padding").addEventListener("input", () => {
         fonts("padding", "#padding")
     })
+    $("#line-height").addEventListener("change", () => {
+        fonts("line-height", "#line-height")
+    })
 }
 
 window.addEventListener("load", initializeProject)
