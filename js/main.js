@@ -18,6 +18,10 @@ const alignText = (align) => {
     $(".top-text").style.textAlign = align
     $(".bottom-text").style.textAlign = align
 }
+const backgroundTransparent = () => {
+    $(".top-text").style.backgroundColor = "transparent"
+    $(".bottom-text").style.backgroundColor = "transparent"
+}
 
 // Modo oscuro - modo claro 
 const lightTheme = () => {
@@ -134,6 +138,9 @@ const initializeProject = () => {
     })
     $("#background-color").addEventListener("input", () => {
         fonts("backgroundColor", "#background-color")
+    })
+    $("#background-transparent").addEventListener("input", (e) => {
+        (e.target.checked) ? backgroundTransparent() : fonts("backgroundColor", "#background-color")
     })
 }
 
