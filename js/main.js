@@ -129,6 +129,9 @@ const initializeProject = () => {
     $("#align-right").addEventListener("click", () => {
         alignText("right")
     })
+    $("#text-color").addEventListener("input", () => {
+        fonts("color", "#text-color")
+    })
 }
 
 window.addEventListener("load", initializeProject)
