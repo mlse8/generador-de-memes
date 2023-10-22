@@ -27,6 +27,12 @@ const textStroke = (color) => {
     $(".top-text").style.webkitTextStroke = `1px ${color}`
     $(".bottom-text").style.webkitTextStroke = `1px ${color}`
 }
+// Descargar meme
+const downloadMeme = () => {
+    domtoimage.toBlob($(".meme")).then((blob) => {
+        saveAs(blob, "my-meme.png")
+    })
+}
 
 // Modo oscuro - modo claro 
 const lightTheme = () => {
@@ -167,6 +173,9 @@ const initializeProject = () => {
     $("#line-height").addEventListener("change", () => {
         fonts("line-height", "#line-height")
     })
+
+    // Descargar meme
+    $("#download-meme").addEventListener("click", downloadMeme)
 }
 
 window.addEventListener("load", initializeProject)

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/risa.png" type="image/x-icon">
     <link rel="stylesheet" href="css/default.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ef3f394e31.js" crossorigin="anonymous"></script>
     <title>Editor de memes</title>
 </head>
@@ -38,7 +40,7 @@
             <div class="meme-img"></div>
             <p class="meme-text bottom-text">BOTTOM TEXT</p>
         </div>
-        <button class="btn meme-btn">
+        <button id="download-meme" class="btn meme-btn">
             <i class="fa-solid fa-download"></i>
             Descargar meme
         </button>
