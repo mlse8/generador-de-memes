@@ -44,3 +44,9 @@
 .meme-btn:hover{
     background-color: #1B5E20;
 }
+
+@media (width >= 768px){
+    .meme-text{
+        font-size: 2rem;
+    }
+}

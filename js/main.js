@@ -5,6 +5,7 @@ const showPanel = () => $(".panel-container").style.display = "block"
 const hidePanel = () => $(".panel-container").style.display = "none"
 const hideElement = (selector) => $(selector).classList.add("none")
 const showElement = (selector) => $(selector).classList.remove("none")
+let sizeText = parseInt(window.getComputedStyle($(".top-text")).getPropertyValue("font-size"))
 
 // Imagen
 const backgroundImage = (e) => $(".meme-img").style.backgroundImage = `url("${e.target.value}")`
@@ -21,6 +22,10 @@ const alignText = (align) => {
 const backgroundTransparent = () => {
     $(".top-text").style.backgroundColor = "transparent"
     $(".bottom-text").style.backgroundColor = "transparent"
+}
+const textStroke = (color) => {
+    $(".top-text").style.webkitTextStroke = `1px ${color}`
+    $(".bottom-text").style.webkitTextStroke = `1px ${color}`
 }
 
 // Modo oscuro - modo claro 
@@ -64,6 +69,9 @@ const fonts = (property, id) => {
 }
 
 const initializeProject = () => {
+    // Visualizar tamaño de fuente en el input (por el cambio de tamaño en las media queries) 
+    $("#text-font-size").setAttribute("value", sizeText)
+
     // Modo oscuro - modo claro 
     $('.button-theme').addEventListener('click', lightTheme)
 
@@ -141,6 +149,15 @@ const initializeProject = () => {
     })
     $("#background-transparent").addEventListener("input", (e) => {
         (e.target.checked) ? backgroundTransparent() : fonts("backgroundColor", "#background-color")
+    })
+    $("#stroke-unset").addEventListener("click", () => {
+        textStroke("transparent")
+    })
+    $("#stroke-light").addEventListener("click", () => {
+        textStroke("white")
+    })
+    $("#stroke-dark").addEventListener("click", () => {
+        textStroke("black")
     })
 }
 
