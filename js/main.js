@@ -59,13 +59,15 @@ const resetFiltersMeme = () =>{
     filtersMeme()
 }
 const fonts = (property, id) => {
-    if (property != "fontSize"){
-        $(".top-text").style[property] = $(id).value
-        $(".bottom-text").style[property] = $(id).value
-    }else{
+    if (property === "fontSize"){
         $(".top-text").style[property] = `${$(id).value}px`
         $(".bottom-text").style[property] = `${$(id).value}px`
-    }
+    }else if (property === "padding"){
+        $(".top-text").style[property] = `${$(id).value}px 16px`
+        $(".bottom-text").style[property] = `${$(id).value}px 16px`
+    }else 
+        $(".top-text").style[property] = $(id).value
+        $(".bottom-text").style[property] = $(id).value
 }
 
 const initializeProject = () => {
@@ -158,6 +160,9 @@ const initializeProject = () => {
     })
     $("#stroke-dark").addEventListener("click", () => {
         textStroke("black")
+    })
+    $("#padding").addEventListener("input", () => {
+        fonts("padding", "#padding")
     })
 }
 
