@@ -132,6 +132,9 @@ const initializeProject = () => {
     $("#text-color").addEventListener("input", () => {
         fonts("color", "#text-color")
     })
+    $("#background-color").addEventListener("input", () => {
+        fonts("backgroundColor", "#background-color")
+    })
 }
 
 window.addEventListener("load", initializeProject)

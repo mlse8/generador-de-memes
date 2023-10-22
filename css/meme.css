@@ -31,13 +31,14 @@
 }
 .btn{
     padding: 1rem;
-    color: #FFFFFF;
+    color: var(--text-color);
     border: none;
     border-radius: .5rem;
     cursor: pointer;
     transition: background-color .25s;
 }
 .meme-btn{
+    color: #FFFFFF;
     background-color: #2e7d32;
 }
 .meme-btn:hover{
