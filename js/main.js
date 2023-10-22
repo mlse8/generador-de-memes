@@ -11,13 +11,9 @@ const backgroundImage = (e) => $(".meme-img").style.backgroundImage = `url("${e.
 const backgroundColor = (e) => $(".meme-img").style.backgroundColor = e.target.value
 const backgroundBlendMode = (e) => $(".meme-img").style.backgroundBlendMode = e.target.value
 const filtersMeme = () => $(".meme-img").style.filter = `blur(${$("#blur").value}px) brightness(${$("#brightness").value}) contrast(${$("#contrast").value}%) grayscale(${$("#grayscale").value}%) hue-rotate(${$("#hue-rotate").value}deg) invert(${$("#invert").value}) opacity(${$("#opacity").value}) saturate(${$("#saturate").value}%) sepia(${$("#sepia").value}%)`
-const reset = (selector, initialValue=0) => {
-    $(selector).value = initialValue
-}
-const writeText = (paragraph ,text) => {
-    $(paragraph).innerText = $(text).value
-}
-const fontFamily = (selector) => $(selector).style.fontFamily = $("#text-font-family").value
+const reset = (selector, initialValue=0) => $(selector).value = initialValue
+
+const writeText = (paragraph ,text) => $(paragraph).innerText = $(text).value
 
 // Modo oscuro - modo claro 
 const lightTheme = () => {
@@ -49,9 +45,14 @@ const resetFiltersMeme = () =>{
     reset("#invert")
     filtersMeme()
 }
-const changeFont = () => {
-    fontFamily(".top-text")
-    fontFamily(".bottom-text")
+const fonts = (property, id) => {
+    if (property != "fontSize"){
+        $(".top-text").style[property] = $(id).value
+        $(".bottom-text").style[property] = $(id).value
+    }else{
+        $(".top-text").style[property] = `${$(id).value}px`
+        $(".bottom-text").style[property] = `${$(id).value}px`
+    }
 }
 
 const initializeProject = () => {
@@ -106,7 +107,12 @@ const initializeProject = () => {
         (e.target.checked) ? hideElement(".top-text") : showElement(".top-text")
     })*/
 
-    $("#text-font-family").addEventListener("change", changeFont)
+    $("#text-font-family").addEventListener("change", () => {
+        fonts("fontFamily", "#text-font-family")
+    })
+    $("#text-font-size").addEventListener("input", () => {
+        fonts("fontSize", "#text-font-size")
+    })
 }
 
 window.addEventListener("load", initializeProject)
