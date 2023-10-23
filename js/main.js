@@ -9,7 +9,8 @@ let sizeText = parseInt(window.getComputedStyle($(".top-text")).getPropertyValue
 
 // Imagen
 const backgroundImage = (e) => $(".meme-img").style.backgroundImage = `url("${e.target.value}")`
-const backgroundColor = (e) => $(".meme-img").style.backgroundColor = e.target.value
+const backgroundColor = (e) => $(".meme").style.backgroundColor = e.target.value
+const colorPicker = (selector) => $(selector).setAttribute("data-color", `${($(selector).value).toUpperCase()}`)
 const backgroundBlendMode = (e) => $(".meme-img").style.backgroundBlendMode = e.target.value
 const filtersMeme = () => $(".meme-img").style.filter = `blur(${$("#blur").value}px) brightness(${$("#brightness").value}) contrast(${$("#contrast").value}%) grayscale(${$("#grayscale").value}%) hue-rotate(${$("#hue-rotate").value}deg) invert(${$("#invert").value}) opacity(${$("#opacity").value}) saturate(${$("#saturate").value}%) sepia(${$("#sepia").value}%)`
 const reset = (selector, initialValue=0) => $(selector).value = initialValue
@@ -97,6 +98,10 @@ const initializeProject = () => {
 
     $("#colors-input").addEventListener("input", backgroundColor)
 
+    $("#colors-input").addEventListener("input", () =>{
+        colorPicker("#colors-input")
+    })
+
     $("#colors-select").addEventListener("change", backgroundBlendMode)
 
     // Filtros
@@ -151,9 +156,11 @@ const initializeProject = () => {
     })
     $("#text-color").addEventListener("input", () => {
         fonts("color", "#text-color")
+        colorPicker("#text-color")
     })
     $("#background-color").addEventListener("input", () => {
         fonts("backgroundColor", "#background-color")
+        colorPicker("#background-color")
     })
     $("#background-transparent").addEventListener("input", (e) => {
         (e.target.checked) ? backgroundTransparent() : fonts("backgroundColor", "#background-color")

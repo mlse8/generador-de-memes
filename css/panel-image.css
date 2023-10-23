@@ -47,12 +47,38 @@
     border-radius: .5rem;
 }
 .controls-input:hover,
-.controls-input:focus{
+.controls-input:focus,
+#colors-input:hover::after,
+#colors-input:focus::after,
+#text-color:hover::after,
+#text-color:focus::after,
+#background-color:hover::after,
+#background-color:focus::after{
     background-color: var(--button-filter-hover);
 }
 .controls-colors{
     display: flex;
     gap: .75rem;
+}
+#colors-input,
+#text-color,
+#background-color{
+    position: relative;
+}
+#colors-input::after,
+#text-color::after,
+#background-color::after{
+    content: attr(data-color);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--button-filter);
+    border-radius: .5rem;
 }
 .controls-filters{
     display: flex;
