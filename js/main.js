@@ -9,7 +9,7 @@ let sizeText = parseInt(window.getComputedStyle($(".top-text")).getPropertyValue
 
 // Imagen
 const backgroundImage = (e) => $(".meme-img").style.backgroundImage = `url("${e.target.value}")`
-const backgroundColor = (e) => $(".meme").style.backgroundColor = e.target.value
+const backgroundColor = (e) => $(".meme-img").style.backgroundColor = e.target.value
 const colorPicker = (selector) => $(selector).setAttribute("data-color", `${($(selector).value).toUpperCase()}`)
 const backgroundBlendMode = (e) => $(".meme-img").style.backgroundBlendMode = e.target.value
 const filtersMeme = () => $(".meme-img").style.filter = `blur(${$("#blur").value}px) brightness(${$("#brightness").value}) contrast(${$("#contrast").value}%) grayscale(${$("#grayscale").value}%) hue-rotate(${$("#hue-rotate").value}deg) invert(${$("#invert").value}) opacity(${$("#opacity").value}) saturate(${$("#saturate").value}%) sepia(${$("#sepia").value}%)`
@@ -23,6 +23,10 @@ const alignText = (align) => {
 const backgroundTransparent = () => {
     $(".top-text").style.backgroundColor = "transparent"
     $(".bottom-text").style.backgroundColor = "transparent"
+}
+const position = (valuePosition) =>{
+    $(".top-text").style.position = valuePosition
+    $(".bottom-text").style.position = valuePosition
 }
 const textStroke = (color) => {
     $(".top-text").style.webkitTextStroke = `1px ${color}`
@@ -75,6 +79,16 @@ const fonts = (property, id) => {
     }else 
         $(".top-text").style[property] = $(id).value
         $(".bottom-text").style[property] = $(id).value
+}
+const checkBackgroundTransparent = () => {
+    if ($("#background-transparent").checked){
+        backgroundTransparent()
+        position("absolute")
+        $(".bottom-text").style.bottom = "0"
+    } else {
+        position("relative")
+        fonts("backgroundColor", "#background-color")
+    }
 }
 
 const initializeProject = () => {
@@ -159,12 +173,10 @@ const initializeProject = () => {
         colorPicker("#text-color")
     })
     $("#background-color").addEventListener("input", () => {
-        fonts("backgroundColor", "#background-color")
+        checkBackgroundTransparent()
         colorPicker("#background-color")
     })
-    $("#background-transparent").addEventListener("input", (e) => {
-        (e.target.checked) ? backgroundTransparent() : fonts("backgroundColor", "#background-color")
-    })
+    $("#background-transparent").addEventListener("change", checkBackgroundTransparent)
     $("#stroke-unset").addEventListener("click", () => {
         textStroke("transparent")
     })
