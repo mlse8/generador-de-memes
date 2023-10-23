@@ -23,8 +23,12 @@
     --button-filter-hover: #BDBDBD;
 }
 body{
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-color);
     color: var(--text-color);
+    overflow: hidden;
 }
 .none{
     display: none;

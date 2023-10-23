@@ -1,5 +1,5 @@
 .meme-container{
-    height: calc(100vh - 120px);
+    flex: 1;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -8,8 +8,8 @@
     gap: 2rem;
 }
 .meme{
-    width: clamp(300px, 60vmin, 480px);
-    height: clamp(300px, 60vmin, 480px);
+    width: clamp(300px, 60vmin, 600px);
+    height: clamp(300px, 60vmin, 600px);
     background-color: #000;
     display: flex;
     flex-direction: column;
